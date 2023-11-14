@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { Link, useParams } from "react-router-dom";
 
+import AddTask from "./components/AddTask";
+
 const API_URL = "https://project-management-api-4641927fee65.herokuapp.com";
 
 
@@ -35,6 +37,8 @@ function ProjectDetailsPage(props) {
                     <p>{project.description}</p>
                 </>
             )}
+
+            <AddTask projectId={projectId} callbackToUpdateProject={getProject}/>
 
             {project &&
                 project.tasks.map((task) => (
