@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar";
 import HomePage from "./pages/HomePage";
 import ProjectListPage from "./pages/ProjectListPage";
 import CreateProjectPage from "./pages/CreateProjectPage";
+import ProjectDetailsPage from "./ProjectDetailsPage";
 
 function App() {
 
@@ -16,7 +17,8 @@ function App() {
         <Routes>
           <Route path='/' element={<p>This will be the {<HomePage />}</p>} />
           <Route path="/projects" element={<ProjectListPage />} />
-          <Route path="/projects/create" element={<CreateProjectPage />} />         
+          <Route path="/projects/create" element={<CreateProjectPage />} />
+          <Route path="/projects/:projectId" element={<ProjectDetailsPage />} />         
         </Routes>
 
       </div>
@@ -24,4 +26,4 @@ function App() {
   )
 }
 
-export default App
+export default App;
