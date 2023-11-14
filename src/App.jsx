@@ -5,6 +5,7 @@ import HomePage from "./pages/HomePage";
 import ProjectListPage from "./pages/ProjectListPage";
 import CreateProjectPage from "./pages/CreateProjectPage";
 import ProjectDetailsPage from "./ProjectDetailsPage";
+import EditProjectPage from "./pages/EditProjectPage";
 
 function App() {
 
@@ -15,10 +16,11 @@ function App() {
        <Navbar />
 
         <Routes>
-          <Route path='/' element={<p>This will be the {<HomePage />}</p>} />
-          <Route path="/projects" element={<ProjectListPage />} />
-          <Route path="/projects/create" element={<CreateProjectPage />} />
-          <Route path="/projects/:projectId" element={<ProjectDetailsPage />} />         
+          <Route path='/' element={ <p>This will be the { <HomePage /> }</p> } />
+          <Route path="/projects" element={ <ProjectListPage /> } />
+          <Route path="/projects/create" element={ <CreateProjectPage /> } />
+          <Route path="/projects/:projectId" element={ <ProjectDetailsPage /> } />
+          <Route path="/projects/edit/:projectId" element={ <EditProjectPage /> } />           
         </Routes>
 
       </div>
