@@ -2,9 +2,6 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-const API_URL = "https://project-management-api-4641927fee65.herokuapp.com";
-
-
 function ProjectListPage(){
 
     console.log("ProjectListPage has been invoked....")
@@ -13,7 +10,7 @@ function ProjectListPage(){
 
 
     const getAllProjects = () => {
-        axios.get(API_URL + "/projects?_embed=tasks")
+        axios.get(import.meta.env.VITE_API_URL + "/projects?_embed=tasks")
             .then((response) => {
                 setProjects(response.data);
             })

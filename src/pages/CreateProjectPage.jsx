@@ -2,8 +2,6 @@ import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const API_URL = "https://project-management-api-4641927fee65.herokuapp.com";
-
 function CreateProjectPage() {
 
     const [title, setTitle] = useState('');
@@ -26,7 +24,7 @@ function CreateProjectPage() {
         }
 
         // Send POST request - axios.post(url, data).then().catch():
-        axios.post(`${API_URL}/projects`, newProject)
+        axios.post(`${import.meta.env.VITE_API_URL}/projects`, newProject)
             .then(response => {
                 // Project created, we'll redirect to /projects:
                 navigate('/projects')

@@ -1,9 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
 
-const API_URL = "https://project-management-api-4641927fee65.herokuapp.com";
-
-
 function AddTask(props) {
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("");
@@ -22,7 +19,7 @@ function AddTask(props) {
         }
 
         // POST /tasks:
-        axios.post(`${API_URL}/tasks`, requestBody)
+        axios.post(`${import.meta.env.VITE_API_URL}/tasks`, requestBody)
             .then( response => {
                 // Invoke function in the parent component, so that the list of tasks is updated:
                 props.callbackToUpdateProject()
